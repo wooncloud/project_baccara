@@ -1,6 +1,23 @@
 # project_baccarat
 4인 협업 개발 바카라 카드게임 - 자바 협업 팀 프로젝트
 
+# 프로젝트에 대해
+이 프로젝트는 4인협업 자바 개발 프로젝트 입니다.
+
+## 개발환경
++ Language : JAVA
++ IDE : Eclipse
++ Git
++ Slack
++ Trello
+
+## 참여자
++ Woo SeongHo
++ Jung SeungHo
++ Hong SaSung
++ Jeong JuHyun
+
+
 # 바카라(Baccarat)
   
 ## 설명
