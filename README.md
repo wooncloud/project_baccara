@@ -99,7 +99,7 @@ King, Queen, Jack, 10은 각각 0으로 계산.
 그렇기 때문에 승리하면 수수료 5%를 공제해 배당이 1.95배.
 
 #### Banker’s Rule
-![banker draw rule](https://files.slack.com/files-pri/T01R8B7UHBR-F01SUTGNGSC/image.png)
+![banker draw rule](https://github.com/wooncloud/project_baccarat/blob/master/banker_draw_rule_table.png?raw=true)
 | Banker측 처음 2장의 카드 합 | Player측 세 번째 카드가 아래의 경우 추가카드를 받음 | Player측 세 번째 카드가 아래의 경우 추가카드를 받지 않음 |
 |:---------------------------:|:---------------------------------------------------:|:--------------------------------------------------------:|
 |            2이하            |                  한 장의 카드를 더 받음               |                        -                                 |
