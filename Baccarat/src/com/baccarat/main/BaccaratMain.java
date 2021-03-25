@@ -2,7 +2,7 @@ package com.baccarat.main;
 
 import com.baccarat.user.Betting;
 import com.baccarat.user.InputVal;
-import com.baccarat.user.Money;
+import com.baccarat.user.User;
 
 public class BaccaratMain {
 
@@ -11,13 +11,15 @@ public class BaccaratMain {
 		// InputVal test
 //		System.out.println(InputVal.returnInt());
 		
-		// Betting test
-//		Betting bet = new Betting();
-//		bet.startBet();
+		// test
+		Betting bet = new Betting();
+		User user = User.getInstance();
+		bet.startBet(user);
 		
-		// Money test
-		Money money = new Money();
-		System.out.println(money.balance());
+
+		
+		
+		
 		
 		
 		
