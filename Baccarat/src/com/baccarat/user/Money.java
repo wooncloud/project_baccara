@@ -11,9 +11,8 @@ public class Money {
 	
 	public int balance() {
 		Betting bet = new Betting();
+		bet.startBet();
 		money = (bet.getFirstMoney() - bet.getSum());		
-		System.out.println(bet.getFirstMoney());
-		System.out.println(bet.getSum());
 		return money;
 	}
 	
