@@ -1,5 +1,8 @@
 package com.baccarat.rule;
 
+import com.baccarat.card.CardOne;
+import com.baccarat.card.CardValue;
+
 public interface Dividend_Rate {
 	
 	double playerWin = 2.0;
@@ -8,6 +11,7 @@ public interface Dividend_Rate {
 	double playerPair = 11.0;
 	double bankerPair = 11.0;
 	
-	boolean winOrLose();
-	boolean checkPair();
+	int winOrLose(int playerSC, int bankerSC);
+	int cardScoreSum(CardOne[] cards);
+	boolean checkPair(CardOne[] cards);
 }

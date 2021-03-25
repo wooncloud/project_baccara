@@ -24,12 +24,12 @@ public class CardOne {
 
 	@Override
 	public String toString() {
-		return card ;
+		return getCard() ;
 	}
 
 	@Override
 	public int hashCode() {
-		return card.hashCode()+137;
+		return getCard().hashCode()+137;
 	}
 
 	@Override
@@ -41,12 +41,16 @@ public class CardOne {
 		if (getClass() != obj.getClass())
 			return false;
 		CardOne other = (CardOne) obj;
-		if (card == null) {
-			if (other.card != null)
+		if (getCard() == null) {
+			if (other.getCard() != null)
 				return false;
-		} else if (!card.equals(other.card))
+		} else if (!getCard().equals(other.getCard()))
 			return false;
 		return true;
+	}
+
+	public String getCard() {
+		return card;
 	}
 	
 	

@@ -3,7 +3,7 @@ public class CardValue {
 	
 	
 	//point value 점수 밸류 뽑기
-	public int Value(String xCard) {
+	public static int Value(String xCard) {
 		String fVal= xCard.substring(1);// face value 추출//		System.out.println(fVal);
 		int pVal = 0; 
 		if ( fVal.equals("10") || fVal.equals("J")|| fVal.equals("Q")|| fVal.equals("K") ) {
@@ -13,7 +13,7 @@ public class CardValue {
 		}else {
 			pVal=Integer.parseInt(fVal);
 		}
-		 System.out.println(pVal); 
+//		 System.out.println(pVal); 
 		return  pVal; //return point value
 	}
 	
