@@ -1,15 +1,18 @@
 package com.baccarat.dealer;
 
+import com.baccarat.card.CardCase_JCF;
 import com.baccarat.user.Betting;
 import com.baccarat.user.User;
 
 public class Dealer {
 
 	// 카드케이스 객체
+	private CardCase_JCF cardCase;
 	// 카드 룰
 
 	public Dealer() {
 		// 카드케이스 생성
+		cardCase = new CardCase_JCF();
 		// 카드 룰 생성
 	}
 
@@ -18,17 +21,17 @@ public class Dealer {
 	 */
 	public void gameFlow() {
 		// System.out.println(User.getInstance().getBalance());
-		
+
 		// 플레이어 객체를 받아와서 배팅
 		Betting bet = new Betting();
 		bet.startBet();
-		
+
 		// 카드 뽑기
 		cardDraw();
 
 		// 카드 룰에서 네츄럴인지 확인
 		// 네츄럴이면 카드룰.승패확인
-		// 아니면 카드룰.카드체크 
+		// 아니면 카드룰.카드체크
 	}
 
 	/**
@@ -47,11 +50,12 @@ public class Dealer {
 
 	/**
 	 * 유저의 돈을 보고 파산했는지 확인한다.
+	 * 
 	 * @return 유저가 파산했으면 true 아니면 false
 	 */
 	public boolean userMoneyCheck() {
 		boolean isc = false;
-		
+
 		return isc;
 	}
 
