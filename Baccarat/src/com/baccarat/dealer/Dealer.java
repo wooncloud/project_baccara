@@ -1,5 +1,8 @@
 package com.baccarat.dealer;
 
+import com.baccarat.user.Betting;
+import com.baccarat.user.User;
+
 public class Dealer {
 
 	// 카드케이스 객체
@@ -14,8 +17,12 @@ public class Dealer {
 	 * 딜러가 게임의 흐름을 제어한다.
 	 */
 	public void gameFlow() {
+		// System.out.println(User.getInstance().getBalance());
+		
 		// 플레이어 객체를 받아와서 배팅
-
+		Betting bet = new Betting();
+		bet.startBet();
+		
 		// 카드 뽑기
 		cardDraw();
 
