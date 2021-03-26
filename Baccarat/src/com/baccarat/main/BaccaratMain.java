@@ -16,6 +16,9 @@ public class BaccaratMain {
 		User user = User.getInstance();
 		bet.startBet(user);
 		
+		System.out.println(user.getBetTie());
+		System.out.println(user.getSum());
+		
 
 		
 		

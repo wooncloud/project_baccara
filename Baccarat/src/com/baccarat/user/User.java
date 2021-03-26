@@ -14,6 +14,10 @@ public class User {
 	private User() {
 	}
 	
+	private User(int sum) {
+		this.sum = sum;
+	}
+	
 	public static User getInstance() {
 		if(user==null) {
 			user = new User();
