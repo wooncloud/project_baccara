@@ -3,13 +3,19 @@ package com.baccarat.rule;
 import com.baccarat.card.CardOne;
 import com.baccarat.card.CardValue;
 
-public class BaccaratGame_Rule implements Dividend_Rate {
+public class BaccaratGame_Rule {
 
-	int score;
+	final static double playerWin = 2.0;  
+	final static double bankerWin = 1.95; 
+	final static double tie = 8.0;        
+	final static double playerPair = 11.0;
+	final static double bankerPair = 11.0;
+	
+	
+	static int score;
 	public int playerSC = 0;
 	public int bankerSC = 0;
 
-	@Override
 	public int winOrLose(int playerSC, int bankerSC) {
 		int result = 0;
 
@@ -23,7 +29,6 @@ public class BaccaratGame_Rule implements Dividend_Rate {
 		return result;
 	}
 
-	@Override
 	public boolean checkPair(CardOne[] cards) {
 		boolean isc = false;
 		for (int i = 0; i < cards.length; i++) {
@@ -35,14 +40,14 @@ public class BaccaratGame_Rule implements Dividend_Rate {
 				}
 		}
 		return isc;
+		
 	}
 		
 
 	/**
 	 * 카드 2장의 합을 구해주는 메소드
 	 */
-	@Override
-	public int cardScoreSum(CardOne[] cards) {
+	public static  int cardScoreSum(CardOne[] cards) {
 
 		int sum = 0;
 		for (int i = 0; i < cards.length; i++) {
