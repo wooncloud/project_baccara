@@ -5,17 +5,21 @@ import com.baccarat.card.CardValue;
 
 public class BaccaratGame_Rule {
 
-	final static double playerWin = 2.0;  
-	final static double bankerWin = 1.95; 
-	final static double tie = 8.0;        
-	final static double playerPair = 11.0;
-	final static double bankerPair = 11.0;
-	
+	public final static double PLAYER_WIN = 2.0;  
+	public final static double BANKER_WIN = 1.95; 
+	public final static double TIE = 8.0;        
+	public final static double PAIR = 11.0;
 	
 	static int score;
 	public int playerSC = 0;
 	public int bankerSC = 0;
 
+	/**
+	 * 플레이어와 뱅커 점수를 보고 승패 결정 여부
+	 * @param playerSC 플레이어 점수
+	 * @param bankerSC 뱅커 점수
+	 * @return 
+	 */
 	public int winOrLose(int playerSC, int bankerSC) {
 		int result = 0;
 
@@ -29,6 +33,11 @@ public class BaccaratGame_Rule {
 		return result;
 	}
 
+	/**
+	 * 
+	 * @param cards
+	 * @return
+	 */
 	public boolean checkPair(CardOne[] cards) {
 		boolean isc = false;
 		for (int i = 0; i < cards.length; i++) {
