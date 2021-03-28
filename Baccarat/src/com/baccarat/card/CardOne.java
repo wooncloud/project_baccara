@@ -8,7 +8,7 @@ package com.baccarat.card;
  */
 public class CardOne {
 
-	public String card;
+	private String card;
 
 	public static final String[] SHAPE = { "◆", "♠", "♥", "♣" };
 	public static final String[] NUMBER = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
@@ -25,7 +25,7 @@ public class CardOne {
 
 	@Override
 	public String toString() {
-		return card;
+		return getCard();
 	}
 
 	@Override
@@ -42,12 +42,15 @@ public class CardOne {
 		if (getClass() != obj.getClass())
 			return false;
 		CardOne other = (CardOne) obj;
-		if (card == null) {
-			if (other.card != null)
+		if (getCard() == null) {
+			if (other.getCard() != null)
 				return false;
-		} else if (!card.equals(other.card))
+		} else if (!getCard().equals(other.getCard()))
 			return false;
 		return true;
 	}
 
+	public String getCard() {
+		return card;
+	}
 }

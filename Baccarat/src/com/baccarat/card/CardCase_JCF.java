@@ -36,15 +36,15 @@ public class CardCase_JCF {
 	public List<CardOne> getCardcase() {
 		return cardcase;
 	}
-	
+
 	public String randomOne(List<CardOne> cards) {
 
 		double randomValue = Math.random();
 		int ran = (int) (randomValue * cards.size()) - 1; // ran= cards배열의 인덱스번호
-		
+
 		CardOne card1 = cards.get(ran);
 		cards.remove(cards.indexOf(card1));
-		
+
 		// System.out.println(card1);
 
 		return card1.toString();
