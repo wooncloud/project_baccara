@@ -32,7 +32,7 @@ public class BaccaratGame {
 			// 게임 5판은 무조건 한다.
 			for (int i = 0; i < gameCount; i++) {
 				System.out.printf("<<< %d번째 게임 >>>\n", i + 1);
-				
+
 				dealer.gameFlow();
 
 				// 파산 체크해서 파산이면 out
@@ -45,7 +45,7 @@ public class BaccaratGame {
 			System.out.print("> 게임이 끝났습니다. 한번 더 하시겠습니까? (Y/N) : ");
 			// isContinue = is Continue? 입력받음
 			isContinue = true;
-			if(InputVal.returnString().toUpperCase().trim().compareTo("N") == 0) {
+			if (InputVal.returnString().toUpperCase().trim().compareTo("N") == 0) {
 				isContinue = false;
 				System.out.println("[ Game Over ]");
 			}

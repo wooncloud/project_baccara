@@ -6,6 +6,7 @@ public class judement {
 
 	/**
 	 * 플레이어가 서드를 받을 수 있는지 못 받는지 결정 여부
+	 * 
 	 * @param playerTwosum
 	 * @param bankerTwosum
 	 * @return
@@ -29,6 +30,7 @@ public class judement {
 
 	/**
 	 * 뱅커가 서드를 받을 수 있는지 못 받는지 결정 여부
+	 * 
 	 * @param playerTwosum
 	 * @param bankerTwosum
 	 * @return

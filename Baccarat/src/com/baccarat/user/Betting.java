@@ -12,7 +12,6 @@ public class Betting {
 //		System.out.println("초기 자산을 입력하세요 : ");
 //		int firstMoney = user.firstMoney();
 
-		
 		// 0. Init 유저의 정보를 가져옴.
 		int balance = user.getBalance();
 		int sum = user.getSum();
@@ -23,10 +22,10 @@ public class Betting {
 		int pp = user.getBetPlayerPair();
 		int bp = user.getBetBankerPair();
 		// 벨런스 빼고 다 어짜피 0 아닌가?
-		
+
 		// 현재 balance 출력
 		System.out.printf("[ 돈 : %d ] \n", balance);
-		
+
 		// 1. Player or Banker 선택 배팅 로직
 		int choice = 0;
 		choice = ChoiceBet(choice);
@@ -164,7 +163,7 @@ public class Betting {
 		int input = user.getBetBankerPair();
 		return bettingInputProcess(tmpbal, input);
 	}
-	
+
 	private int bettingInputProcess(int tmpbal, int input) {
 		boolean isc = true;
 		while (isc) {

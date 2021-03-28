@@ -55,11 +55,10 @@ public class User {
 		this.betTie = t;
 		this.betPlayerPair = pp;
 		this.betBankerPair = bp;
-		
+
 		balance = balance + p + b + t + pp + bp;
 		betMoneyReset();
 	}
-
 
 	/**
 	 * 배팅금액 초기화

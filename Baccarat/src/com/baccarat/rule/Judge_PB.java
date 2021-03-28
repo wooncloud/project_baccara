@@ -34,7 +34,7 @@ public class Judge_PB {
 			isc = false;
 			break;
 		}
-		
+
 		return isc;
 	}
 

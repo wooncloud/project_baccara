@@ -51,16 +51,16 @@ public class BaccaratGame_Rule {
 		}
 		return isc;
 	}
-	
+
 	public static boolean checkPair(CardOne card1, CardOne card2) {
 		boolean isc = false;
 
 		char card1Num = card1.getCard().charAt(1);
 		char card2Num = card2.getCard().charAt(1);
-		if(card1Num == card2Num) {
+		if (card1Num == card2Num) {
 			isc = true;
 		}
-		
+
 		return isc;
 	}
 

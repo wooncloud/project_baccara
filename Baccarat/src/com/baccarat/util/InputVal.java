@@ -27,10 +27,10 @@ public class InputVal {
 
 	public static String returnString() {
 		String val = null;
-		
+
 		Scanner scan = new Scanner(System.in);
 		val = scan.nextLine();
-		
+
 		return val;
 	}
 
