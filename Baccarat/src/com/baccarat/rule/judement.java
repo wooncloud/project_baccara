@@ -1,12 +1,11 @@
 package com.baccarat.rule;
 
-
 public class judement {
 	
 	static String judgmentP = null;
 	public static String judgeP(int playerTwosum, int BankerTwosum ) {
 		if (playerTwosum>=0&&playerTwosum<=5) {
-			System.out.println("Player : Draw!!\n");
+			System.out.println("Player : Draw!!"+" / "+"추가카드 1장\n");
 			judgmentP= "draw";
 		}else if(playerTwosum==6 || playerTwosum ==7) {
 			System.out.println("Player : Stand!!\n");
@@ -23,8 +22,9 @@ public class judement {
 	
 	static String judgmentB = null;
 	public static String judgeB(int playerTwosum, int BankerTwosum ) {
+		
 		if (BankerTwosum>=0&&BankerTwosum<=5) {
-			System.out.println("banker : Draw!!\n");
+			System.out.println("banker : Draw!!"+" / "+"추가카드 1장\n");
 			judgmentB= "Draw";
 		}else if(BankerTwosum==6 || BankerTwosum ==7) {
 			System.out.println("banker : Stand!!\n");
