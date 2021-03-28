@@ -24,6 +24,9 @@ public class Betting {
 		int bp = user.getBetBankerPair();
 		// 벨런스 빼고 다 어짜피 0 아닌가?
 		
+		// 현재 balance 출력
+		System.out.printf("[ 돈 : %d ] \n", balance);
+		
 		// 1. Player or Banker 선택 배팅 로직
 		int choice = 0;
 		choice = ChoiceBet(choice);
@@ -31,33 +34,33 @@ public class Betting {
 		// 2. 선택한 배팅에 금액 입력
 		switch (choice) {
 		case 1:
-			System.out.println("Player에 배팅할 금액을 입력하세요 : ");
+			System.out.print("> Player에 배팅할 금액을 입력하세요 : ");
 			p = betPlayer(balance);
 			balance -= p;
 
-			System.out.print("Player에 배팅하셨습니다. ");
+			System.out.println("[Player에 배팅하셨습니다.]");
 			break;
 
 		case 2:
-			System.out.println("Banker에 배팅할 금액을 입력하세요 : ");
+			System.out.print("> Banker에 배팅할 금액을 입력하세요 : ");
 			b = betBanker(balance);
 			balance -= b;
 
-			System.out.print("뱅커에 배팅하셨습니다. ");
+			System.out.println("[뱅커에 배팅하셨습니다.]");
 			break;
 		}
 
 		// 3. 추가 배팅 로직
-		System.out.println("추가로 배팅할 금액을 입력해주세요.\n");
-		System.out.println("Tie에 배팅 할 금액을 입력해주세요.");
+		System.out.println("\n[추가로 배팅할 금액을 입력해주세요.]");
+		System.out.print("> 'Tie'에 배팅 할 금액을 입력해주세요 : ");
 		t = betTie(balance);
 		balance -= t;
 
-		System.out.println("PlayerPair에 배팅 할 금액을 입력해주세요.");
+		System.out.print("> 'Player Pair'에 배팅 할 금액을 입력해주세요 : ");
 		pp = betPlayerPair(balance);
 		balance -= pp;
 
-		System.out.println("BankerPair에 배팅 할 금액을 입력해주세요.");
+		System.out.print("> 'Banker Pair'에 배팅 할 금액을 입력해주세요 : ");
 		bp = betBankerPair(balance);
 		balance -= bp;
 
@@ -66,8 +69,8 @@ public class Betting {
 		user.setBet(sum, p, b, t, pp, bp, balance);
 
 		// test용 출력문
-		System.out.println("배팅완료");
-		System.out.printf("배팅한 금액의 합 : %d / 남은잔액 : %d", sum, balance);
+//		System.out.println("배팅완료");
+//		System.out.printf("[테스트] 배팅한 금액의 합 : %d / 남은잔액 : %d", sum, balance);
 	}
 
 	/**
@@ -79,9 +82,11 @@ public class Betting {
 	private int ChoiceBet(int choice) {
 		boolean isc = true;
 
-		System.out.println("어디에 배팅하시겠습니까?");
+		System.out.println("--------------------");
+		System.out.println("[ 어디에 배팅하시겠습니까? ]");
 		System.out.println("1. Player");
 		System.out.println("2. Banker");
+		System.out.println("--------------------");
 
 		while (isc) {
 			choice = InputVal.returnInt();
@@ -105,16 +110,7 @@ public class Betting {
 	private int betPlayer(int tmpbal) {
 		User user = User.getInstance();
 		int input = user.getBetPlayer();
-		boolean isc = true;
-		while (isc) {
-			input = InputVal.returnInt();
-			if (input > tmpbal) {
-				System.err.println("가지고 있는 금액보다 많이 배팅할 수 없습니다. 다시 입력해주세요.");
-			} else {
-				isc = false;
-			}
-		}
-		return input;
+		return bettingInputProcess(tmpbal, input);
 	}
 
 	/**
@@ -127,16 +123,7 @@ public class Betting {
 	private int betBanker(int tmpbal) {
 		User user = User.getInstance();
 		int input = user.getBetBanker();
-		boolean isc = true;
-		while (isc) {
-			input = InputVal.returnInt();
-			if (input > tmpbal) {
-				System.err.println("가지고 있는 금액보다 많이 배팅할 수 없습니다. 다시 입력해주세요.");
-			} else {
-				isc = false;
-			}
-		}
-		return input;
+		return bettingInputProcess(tmpbal, input);
 	}
 
 	/**
@@ -149,16 +136,7 @@ public class Betting {
 	private int betTie(int tmpbal) {
 		User user = User.getInstance();
 		int input = user.getBetTie();
-		boolean isc = true;
-		while (isc) {
-			input = InputVal.returnInt();
-			if (input > tmpbal) {
-				System.err.println("가지고 있는 금액보다 많이 배팅할 수 없습니다. 다시 입력해주세요.");
-			} else {
-				isc = false;
-			}
-		}
-		return input;
+		return bettingInputProcess(tmpbal, input);
 	}
 
 	/**
@@ -171,16 +149,7 @@ public class Betting {
 	private int betPlayerPair(int tmpbal) {
 		User user = User.getInstance();
 		int input = user.getBetPlayerPair();
-		boolean isc = true;
-		while (isc) {
-			input = InputVal.returnInt();
-			if (input > tmpbal) {
-				System.err.println("가지고 있는 금액보다 많이 배팅할 수 없습니다. 다시 입력해주세요.");
-			} else {
-				isc = false;
-			}
-		}
-		return input;
+		return bettingInputProcess(tmpbal, input);
 	}
 
 	/**
@@ -193,16 +162,24 @@ public class Betting {
 	private int betBankerPair(int tmpbal) {
 		User user = User.getInstance();
 		int input = user.getBetBankerPair();
+		return bettingInputProcess(tmpbal, input);
+	}
+	
+	private int bettingInputProcess(int tmpbal, int input) {
 		boolean isc = true;
 		while (isc) {
 			input = InputVal.returnInt();
 			if (input > tmpbal) {
-				System.err.println("가지고 있는 금액보다 많이 배팅할 수 없습니다. 다시 입력해주세요.");
+				overBetPrint();
 			} else {
 				isc = false;
 			}
 		}
 		return input;
+	}
+
+	private void overBetPrint() {
+		System.err.println("[가지고 있는 금액보다 많이 배팅할 수 없습니다. 다시 입력해주세요.]");
 	}
 
 }

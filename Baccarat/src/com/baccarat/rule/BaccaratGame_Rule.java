@@ -5,31 +5,32 @@ import com.baccarat.card.CardValue;
 
 public class BaccaratGame_Rule {
 
-	public final static double PLAYER_WIN = 2.0;  
-	public final static double BANKER_WIN = 1.95; 
-	public final static double TIE = 8.0;        
+	public final static double PLAYER_WIN = 2.0;
+	public final static double BANKER_WIN = 1.95;
+	public final static double TIE = 8.0;
 	public final static double PAIR = 11.0;
-	
+
 	static int score;
 	public int playerSC = 0;
 	public int bankerSC = 0;
 
 	/**
 	 * 플레이어와 뱅커 점수를 보고 승패 결정 여부
+	 * 
 	 * @param playerSC 플레이어 점수
 	 * @param bankerSC 뱅커 점수
-	 * @return 
+	 * @return
 	 */
 	public int winOrLose(int playerSC, int bankerSC) {
 		int result = 0;
 
-			if (playerSC > bankerSC) {
-				result = 1; // player win
-			} else if (playerSC < bankerSC) {
-				result = 2; // banker win
-			} else if (playerSC == bankerSC) {
-				result = 3; // tie
-			}
+		if (playerSC > bankerSC) {
+			result = 1; // player win
+		} else if (playerSC < bankerSC) {
+			result = 2; // banker win
+		} else if (playerSC == bankerSC) {
+			result = 3; // tie
+		}
 		return result;
 	}
 
@@ -43,20 +44,30 @@ public class BaccaratGame_Rule {
 		for (int i = 0; i < cards.length; i++) {
 			int score1 = CardValue.Value(cards[i].getCard());
 			int score2 = CardValue.Value(cards[i].getCard());
-			
-				if(score1 == score2) {
-					isc = true;
-				}
+
+			if (score1 == score2) {
+				isc = true;
+			}
 		}
 		return isc;
-		
 	}
+	
+	public static boolean checkPair(CardOne card1, CardOne card2) {
+		boolean isc = false;
+
+		char card1Num = card1.getCard().charAt(1);
+		char card2Num = card2.getCard().charAt(1);
+		if(card1Num == card2Num) {
+			isc = true;
+		}
 		
+		return isc;
+	}
 
 	/**
 	 * 카드 2장의 합을 구해주는 메소드
 	 */
-	public static  int cardScoreSum(CardOne[] cards) {
+	public static int cardScoreSum(CardOne[] cards) {
 
 		int sum = 0;
 		for (int i = 0; i < cards.length; i++) {
@@ -64,6 +75,16 @@ public class BaccaratGame_Rule {
 			sum += score;
 		}
 		return sum % 10;
+	}
+
+	/**
+	 * player & banker 의 Judge 결과로 draw 여부를 boolean으로 반환
+	 * 
+	 * @param judgeResult
+	 * @return (boolean) Judge 결과로 draw 여부
+	 */
+	public static boolean isDraw(String judgeResult) {
+		return judgeResult == "draw" ? true : false;
 	}
 
 }

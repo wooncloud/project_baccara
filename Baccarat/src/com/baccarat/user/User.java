@@ -46,6 +46,37 @@ public class User {
 		this.balance = balance;
 	}
 
+	/**
+	 * 배팅금액 모두 balance에 Merge
+	 */
+	public void setDividends(int p, int b, int t, int pp, int bp) {
+		this.betPlayer = p;
+		this.betBanker = b;
+		this.betTie = t;
+		this.betPlayerPair = pp;
+		this.betBankerPair = bp;
+		
+		balance = balance + p + b + t + pp + bp;
+		betMoneyReset();
+	}
+
+
+	/**
+	 * 배팅금액 초기화
+	 */
+	private void betMoneyReset() {
+		this.sum = 0;
+		this.betPlayer = 0;
+		this.betBanker = 0;
+		this.betTie = 0;
+		this.betPlayerPair = 0;
+		this.betBankerPair = 0;
+	}
+
+	public void moneyReset() {
+		this.balance = INIT_USER_MONEY;
+	}
+
 	// regacy : 이 함수는 더이상 사용되지 안습니다.
 	// 이전 테스트용.
 	public int firstMoney() {
@@ -53,7 +84,7 @@ public class User {
 		money = InputVal.returnInt();
 		return money;
 	}
-	
+
 	// Getter ------------->
 
 	public int getSum() {
@@ -85,5 +116,4 @@ public class User {
 	}
 
 	// <---------- Getter End
-	
 }

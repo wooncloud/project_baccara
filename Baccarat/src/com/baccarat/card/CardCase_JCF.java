@@ -32,22 +32,18 @@ public class CardCase_JCF {
 		}
 	}
 
-	// 이건 없어도 될거 같아서 일단 보류
-	public List<CardOne> getCardcase() {
-		return cardcase;
-	}
+	/**
+	 * 카드케이스에서 랜덤으로 카드를 하나 빼온다.
+	 * 
+	 * @return 랜덤으로 뽑은 카드
+	 */
+	public CardOne randomOne() {
+		int ran = (int) (Math.random() * (cardcase.size() - 1));
+		CardOne card1 = cardcase.get(ran);
 
-	public String randomOne(List<CardOne> cards) {
+		cardcase.remove(cardcase.indexOf(card1));
 
-		double randomValue = Math.random();
-		int ran = (int) (randomValue * cards.size()) - 1; // ran= cards배열의 인덱스번호
-
-		CardOne card1 = cards.get(ran);
-		cards.remove(cards.indexOf(card1));
-
-		// System.out.println(card1);
-
-		return card1.toString();
+		return card1;
 	}
 
 }

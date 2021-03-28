@@ -25,7 +25,7 @@ public class CardOne {
 
 	@Override
 	public String toString() {
-		return getCard();
+		return card;
 	}
 
 	@Override
@@ -42,10 +42,10 @@ public class CardOne {
 		if (getClass() != obj.getClass())
 			return false;
 		CardOne other = (CardOne) obj;
-		if (getCard() == null) {
-			if (other.getCard() != null)
+		if (card == null) {
+			if (other.card != null)
 				return false;
-		} else if (!getCard().equals(other.getCard()))
+		} else if (!card.equals(other.card))
 			return false;
 		return true;
 	}
