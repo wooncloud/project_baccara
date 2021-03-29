@@ -144,6 +144,6 @@ King, Queen, Jack, 10은 각각 0으로 계산.
 
 # 설계
 ![ClassDiagram](https://github.com/wooncloud/project_baccarat/blob/master/images/BaccaratClassDiagram.png?raw=true)
-
+![FlowChart](https://github.com/wooncloud/project_baccarat/blob/master/images/diagrams/Flow%20Chart.jpg?raw=true)
 # 결과
 
