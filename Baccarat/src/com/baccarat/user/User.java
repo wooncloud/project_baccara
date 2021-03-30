@@ -83,6 +83,10 @@ public class User {
 		money = InputVal.returnInt();
 		return money;
 	}
+	
+	public int firstMoney1() {
+		return InputVal.returnInt();
+	}
 
 	// Getter ------------->
 

@@ -22,7 +22,7 @@ public class BaccaratGame {
 	 */
 	public void play() {
 		// 플레이어가 계속 게임을 할지 안할지 여부를 체크하는 boolean 변수
-		boolean isContinue = true;
+		boolean isContinue = false;
 
 		do {
 			User user = User.getInstance(); // 유저 생성
@@ -42,11 +42,13 @@ public class BaccaratGame {
 				}
 			}
 
-			System.out.print("> 게임이 끝났습니다. 한번 더 하시겠습니까? (Y/N) : ");
+			System.out.print("> 게임이 끝났습니다. 한번 더 하시겠습니까? \n(계속하시려면 Y를 입력하세요.) : ");
 			// isContinue = is Continue? 입력받음
-			isContinue = true;
-			if (InputVal.returnString().toUpperCase().trim().compareTo("N") == 0) {
-				isContinue = false;
+			isContinue = false;
+			if (InputVal.returnString().toUpperCase().trim().compareTo("Y") == 0) {
+				isContinue = true;
+			}
+			else {
 				System.out.println("[ Game Over ]");
 			}
 		} while (isContinue);

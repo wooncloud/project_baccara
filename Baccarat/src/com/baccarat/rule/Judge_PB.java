@@ -1,6 +1,8 @@
 package com.baccarat.rule;
 
 public class Judge_PB {
+	
+	int a = 0;
 	/**
 	 * player두장 합에 따른 드로우 스탠드 네츄럴 판단<br>
 	 * player가 "draw"이면 세번째 카드를 뽑느다.<br>
