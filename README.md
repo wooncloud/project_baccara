@@ -22,7 +22,9 @@
 + [결과](#결과)   
 
 # 프로젝트에 대해
-이 프로젝트는 4인협업 자바 개발 프로젝트 입니다.
+구디아카데미 빅데이터UI 3차 교육과정 첫번째 팀 프로젝트입니다.
+이 프로젝트는 4인 1팀으로 함께 개발했습니다.
+자바 기본문법 과정을 배우고 협업하여 개발하는 능력을 키우기 위해 진행되었습니다.
 
 ## 개발환경
 + Language : JAVA
@@ -146,4 +148,4 @@ King, Queen, Jack, 10은 각각 0으로 계산.
 ![ClassDiagram](https://github.com/wooncloud/project_baccarat/blob/master/images/BaccaratClassDiagram.png?raw=true)
 ![FlowChart](https://github.com/wooncloud/project_baccarat/blob/master/images/diagrams/Flow%20Chart.jpg?raw=true)
 # 결과
-
+[release](https://github.com/wooncloud/project_baccarat/releases/tag/1.0) : 클릭하면 완성된 프로젝트를 다운받을 수 있습니다.
